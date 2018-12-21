@@ -1,0 +1,15 @@
+<app-searcher 
+  (filtersValuesOutput)="selectLaunches($event)">
+</app-searcher>  
+
+<hr>
+
+<!-- <app-display-list-launcher
+  [filterLaunches]="launches"
+  [filterCounterLaunches]="counterLaunch">  
+</app-display-list-launcher> -->
+
+<app-display-list-launcher
+  [filterLaunches]="filterLaunches$ | async"
+  [filterCounterLaunches]="counterLaunch">  
+</app-display-list-launcher>

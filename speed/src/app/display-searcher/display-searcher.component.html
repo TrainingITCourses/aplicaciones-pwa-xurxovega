@@ -1,0 +1,31 @@
+<div>
+  <ol>
+    <li>
+      Type :
+      <select #searchTextFilter (change)="selectFilterType(searchTextFilter.value)">
+        <option> Choose Filter Type</option>
+        <option 
+          *ngFor="let filter of filterTypesInput" [value]="filter.value">
+          {{ filter.id }} - {{ filter.name }}  
+        </option>
+      </select>       
+    </li>
+    <br>
+     
+    <br>
+    <li>
+      Value: 
+      <select #searchTextValue (change)="selectFilterValue([searchTextFilter.value, $event.target.selectedIndex])">
+          <option> Choose Value</option>
+        <option 
+          *ngFor="let value of valueFilterInput" [value]="value.value">
+          {{ value.id }} - {{ value.name }}  
+        </option>
+
+      </select>
+    </li>
+  </ol>
+
+  <!-- <button type="button" (click)="searchClicked()">Search!</button> -->
+
+</div>
